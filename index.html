@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElektroPro AS — Autorisert Elektriker</title>
+  <meta name="description" content="Autorisert elektriker for bolig og næring. El-sjekk, installasjon, ladeboks og varmepumpe. Ring oss i dag.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital@1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style></style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="mainNav">
+  <div class="nav-logo">
+    <div class="nav-logo-name">Elektro<span>Pro</span></div>
+    <div class="nav-logo-tag">Autorisert elektriker</div>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="tjenester.html">Tjenester</a></li>
+    <li><a href="om-oss.html">Om oss</a></li>
+    <li><a href="#prosjekter">Prosjekter</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <a href="tel:+4712345678" class="btn-glass-sm">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+      Ring oss
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Åpne meny" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── MOBILE MENU ── -->
+<div class="mob-menu" id="mobMenu" aria-hidden="true">
+  <ul>
+    <li><a href="tjenester.html" class="mob-link">Tjenester</a></li>
+    <li><a href="om-oss.html" class="mob-link">Om oss</a></li>
+    <li><a href="#prosjekter" class="mob-link">Prosjekter</a></li>
+    <li><a href="kontakt.html" class="mob-link">Kontakt</a></li>
+  </ul>
+  <div class="mob-menu-divider"></div>
+  <div class="mob-menu-cta">
+    <a href="tel:+4712345678" class="btn-yellow">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+      Ring oss nå
+    </a>
+    <a href="#kontakt" class="btn-glass mob-link">Få gratis tilbud</a>
+  </div>
+  <div class="mob-menu-contact">+47 123 45 678 · kontakt@elektropro.no</div>
+</div>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-video">
+    <video autoplay muted loop playsinline>
+      <source src="18780266-uhd_3840_2160_30fps.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content reveal">
+    <div class="hero-eyebrow">Autorisert elektriker · Bolig &amp; Næring</div>
+    <h1 class="hero-h1">Strøm du<br>kan <span class="accent">stole på</span></h1>
+    <div class="hero-btns">
+      <a href="#kontakt" class="btn-yellow">
+        Få gratis tilbud
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="#tjenester" class="btn-glass">Se tjenester</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll-hint">
+    <div class="hero-scroll-line"></div>
+    Rull
+  </div>
+</section>
+
+<!-- ── STATS ── -->
+<div class="stats-bar">
+  <div class="stat-item reveal"><div class="stat-num">200+</div><div class="stat-label">Fullførte oppdrag</div></div>
+  <div class="stat-item reveal"><div class="stat-num">15+</div><div class="stat-label">År med erfaring</div></div>
+  <div class="stat-item reveal"><div class="stat-num">24/7</div><div class="stat-label">Nødberedskap</div></div>
+</div>
+
+<!-- ── SERVICES ── -->
+<section class="services" id="tjenester">
+  <div class="section-eyebrow">Hva vi gjør</div>
+  <h2 class="section-title reveal">Våre<br><span class="accent">Tjenester</span></h2>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+      <div class="service-name">Elektrisk installasjon</div>
+      <p class="service-desc">Full elektrisk installasjon for nye bygg og rehabilitering av eksisterende anlegg. Bolig, hytte og næringslokale.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div class="service-name">El-sjekk &amp; Inspeksjon</div>
+      <p class="service-desc">Grundig el-sjekk av ditt anlegg etter gjeldende forskrifter. Rapport og anbefalinger inkludert.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg></div>
+      <div class="service-name">Ladeboks &amp; Varmepumpe</div>
+      <p class="service-desc">Installasjon av elbil-lader og varmepumpe. Vi tar oss av alt fra planlegging til ferdig montert anlegg.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14M15.54 8.46a5 5 0 010 7.07M8.46 8.46a5 5 0 000 7.07"/></svg></div>
+      <div class="service-name">Vedlikehold &amp; Feilsøking</div>
+      <p class="service-desc">Raskt utrykning ved feil. Vi finner og utbedrer feil i elektriske anlegg — dag, kveld eller helg.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section class="about" id="om-oss">
+  <div class="about-img-wrap reveal">
+    <img src="pexels-sdvmovies-29206492.jpg" alt="Elektriker ved sikringsskap"/>
+    <div class="about-img-badge">
+      <div class="about-badge-num">★ 4.9</div>
+      <div class="about-badge-txt">Basert på<br>120 anmeldelser</div>
+    </div>
+  </div>
+  <div class="about-content reveal">
+    <div class="section-eyebrow">Om oss</div>
+    <h2 class="section-title" style="font-size:clamp(2rem,5vw,3.5rem);margin-bottom:1.6rem;">Erfaring du<br><span class="accent">kan stole på</span></h2>
+    <blockquote class="about-quote">"Vi gjør jobben riktig — første gang. Alltid."</blockquote>
+    <p class="about-body">ElektroPro AS er et autorisert elektroforetak med over 15 års erfaring innen installasjon, vedlikehold og sikkerhetsinspeksjon. Vi jobber for private, borettslag og næringsbygg over hele regionen.</p>
+    <p class="about-body">Alle oppdrag utføres av godkjente fagfolk, og vi stiller alltid med komplett dokumentasjon etter gjeldende el-forskrifter (FEL/NEK 400).</p>
+    <ul class="about-checklist">
+      <li>Autorisert elinstallasjonsforetak</li>
+      <li>Samsvarserklæring på alle oppdrag</li>
+      <li>Fast pris — ingen overraskelser</li>
+      <li>Gratis befaring og tilbud</li>
+    </ul>
+    <a href="#kontakt" class="btn-yellow">Book gratis befaring</a>
+  </div>
+</section>
+
+<!-- ── GALLERY ── -->
+<section class="gallery" id="prosjekter">
+
+  <!-- Tekst venstre -->
+  <div class="gallery-text reveal">
+    <div class="section-eyebrow">Hvorfor velge oss</div>
+    <h2 class="section-title" style="font-size:clamp(2rem,4vw,3.8rem);margin-bottom:1rem;">
+      Vi leverer mer<br>enn bare <span class="accent">strøm</span>
+    </h2>
+    <p style="font-size:.92rem;line-height:1.85;color:rgba(26,22,16,.82);font-weight:400;margin-bottom:1.8rem;">
+      Hos oss får du en elektriker som møter opp presis, kommuniserer tydelig
+      og leverer arbeid du kan stole på — dokumentert og godkjent etter
+      gjeldende norske forskrifter.
+    </p>
+    <ul class="gallery-sell-points">
+      <li>
+        <div class="gallery-sell-icon">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div>
+          <div class="gallery-sell-title">Sertifisert og forsikret</div>
+          <div class="gallery-sell-desc">Alle oppdrag utføres av autorisert fagpersonell med full samsvarserklæring og forsikring.</div>
+        </div>
+      </li>
+      <li>
+        <div class="gallery-sell-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <div class="gallery-sell-title">Presis og punktlig</div>
+          <div class="gallery-sell-desc">Vi møter opp til avtalt tid — alltid. Ingen utsettelser, ingen unnskyldninger.</div>
+        </div>
+      </li>
+      <li>
+        <div class="gallery-sell-icon">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <div>
+          <div class="gallery-sell-title">Fast og transparent pris</div>
+          <div class="gallery-sell-desc">Du får skriftlig tilbud før vi starter. Ingen overraskelser på sluttsummen.</div>
+        </div>
+      </li>
+      <li>
+        <div class="gallery-sell-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+        </div>
+        <div>
+          <div class="gallery-sell-title">24/7 nødberedskap</div>
+          <div class="gallery-sell-desc">Elektrisk feil kan skje når som helst. Vi er tilgjengelige døgnet rundt for akutte oppdrag.</div>
+        </div>
+      </li>
+    </ul>
+    <a href="#kontakt" class="btn-yellow">
+      Få gratis tilbud
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+
+  <!-- Video høyre -->
+  <div class="gallery-video-wrap reveal">
+    <video autoplay muted loop playsinline>
+      <source src="6474362-uhd_2160_3840_25fps.mp4" type="video/mp4">
+    </video>
+  </div>
+
+</section>
+
+<!-- ── WHY US ── -->
+<section class="why">
+  <div class="section-eyebrow">Hvorfor velge oss</div>
+  <h2 class="section-title reveal">Trygghet i<br><span class="accent">hvert oppdrag</span></h2>
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <div class="why-card-num">01</div>
+      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+      <div class="why-title">Fast pris — ingen overraskelser</div>
+      <p class="why-desc">Vi gir deg et klart og detaljert tilbud på forhånd. Ingen skjulte kostnader. Du vet hva du betaler før vi starter.</p>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-card-num">02</div>
+      <div class="why-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <div class="why-title">Rask responstid</div>
+      <p class="why-desc">Vi svarer innen én time og stiller med elektriker samme dag ved akutte feil. Nødberedskap 24/7.</p>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-card-num">03</div>
+      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div class="why-title">Autorisert og forsikret</div>
+      <p class="why-desc">Fullt autorisert elinstallasjonsforetak. Alle oppdrag utføres etter NEK 400 og FEL med fullstendig samsvarserklæring.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BAND ── -->
+<div class="cta-band">
+  <div class="cta-band-text">
+    Klar for et trygt el-anlegg?
+    <span>Vi svarer på forespørsler innen 1 time på hverdager.</span>
+  </div>
+  <a href="#kontakt" class="btn-dark">
+    Kontakt oss nå
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+</div>
+
+<!-- ── CONTACT ── -->
+<section class="contact" id="kontakt">
+  <div class="contact-info">
+    <div class="section-eyebrow">Ta kontakt</div>
+    <h2 class="section-title reveal" style="font-size:clamp(2rem,5vw,3.5rem);margin-bottom:0;">La oss løse<br><span class="accent">ditt oppdrag</span></h2>
+    <p class="contact-tagline">"Beskriv jobben — vi sender deg et gratis tilbud innen 24 timer."</p>
+    <div class="contact-details">
+      <div class="contact-detail-item">
+        <div class="contact-detail-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.2 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg></div>
+        <div><div class="contact-detail-label">Telefon</div><div class="contact-detail-val">+47 123 45 678</div></div>
+      </div>
+      <div class="contact-detail-item">
+        <div class="contact-detail-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div><div class="contact-detail-label">E-post</div><div class="contact-detail-val">kontakt@elektropro.no</div></div>
+      </div>
+      <div class="contact-detail-item">
+        <div class="contact-detail-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><div class="contact-detail-label">Område</div><div class="contact-detail-val">Trondheim og omegn</div></div>
+      </div>
+    </div>
+  </div>
+
+  <form class="contact-form reveal" onsubmit="return false;">
+    <div class="form-row">
+      <div class="form-group"><label for="fname">Navn</label><input type="text" id="fname" placeholder="Ditt navn"></div>
+      <div class="form-group"><label for="fphone">Telefon</label><input type="tel" id="fphone" placeholder="+47 000 00 000"></div>
+    </div>
+    <div class="form-group"><label for="femail">E-post</label><input type="email" id="femail" placeholder="din@epost.no"></div>
+    <div class="form-group">
+      <label for="ftype">Type oppdrag</label>
+      <select id="ftype">
+        <option value="" disabled selected>Velg type oppdrag</option>
+        <option>El-sjekk / sikkerhetsinspeksjon</option>
+        <option>Ny installasjon (bolig)</option>
+        <option>Ny installasjon (næring)</option>
+        <option>Ladeboks for elbil</option>
+        <option>Varmepumpe</option>
+        <option>Vedlikehold / feilretting</option>
+        <option>Annet</option>
+      </select>
+    </div>
+    <div class="form-group"><label for="fmessage">Beskrivelse</label><textarea id="fmessage" placeholder="Beskriv oppdraget kort — adresse, omfang og ønsket tidspunkt."></textarea></div>
+    <button type="submit" class="btn-yellow form-submit">
+      Send forespørsel
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </button>
+    <p class="form-note">Ingen forpliktelse · Vi svarer innen 24 timer</p>
+  </form>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo-name">Elektro<span>Pro</span> AS</div>
+      <p class="footer-tagline">Autorisert elektriker for bolig og næring. Trygg strøm — levert av fagfolk.</p>
+    </div>
+    <div class="footer-col">
+      <button class="footer-col-toggle" aria-expanded="false">
+        <span>Tjenester</span><span class="footer-col-icon">+</span>
+      </button>
+      <ul>
+        <li><a href="#tjenester">El-installasjon</a></li>
+        <li><a href="#tjenester">El-sjekk</a></li>
+        <li><a href="#tjenester">Ladeboks</a></li>
+        <li><a href="#tjenester">Varmepumpe</a></li>
+        <li><a href="#tjenester">Vedlikehold</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <button class="footer-col-toggle" aria-expanded="false">
+        <span>Selskap</span><span class="footer-col-icon">+</span>
+      </button>
+      <ul>
+        <li><a href="#om-oss">Om oss</a></li>
+        <li><a href="#prosjekter">Prosjekter</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <button class="footer-col-toggle" aria-expanded="false">
+        <span>Kontakt</span><span class="footer-col-icon">+</span>
+      </button>
+      <ul>
+        <li><a href="tel:+4712345678">+47 123 45 678</a></li>
+        <li><a href="mailto:kontakt@elektropro.no">kontakt@elektropro.no</a></li>
+        <li><a href="#">Trondheim og omegn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 ElektroPro AS · Org.nr. 000 000 000 · Alle rettigheter forbeholdt</span>
+    <div style="display:flex;align-items:center;gap:1.6rem;flex-wrap:wrap;">
+      <div class="footer-badge"><div class="footer-badge-dot"></div>Autorisert elinstallasjonsforetak</div>
+      <a href="https://www.yamsas.com" target="_blank" rel="noopener" class="footer-yams">
+        Laget av <span class="footer-yams-logo">YAMS</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- ── MOBILE STICKY CALL BAR ── -->
+<div class="mob-call-bar">
+  <a href="tel:+4712345678" class="mob-call">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+    Ring oss
+  </a>
+  <a href="#kontakt" class="mob-quote">Gratis tilbud</a>
+</div>
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  // Hamburger menu
+  const hamburger = document.getElementById('navHamburger');
+  const mobMenu   = document.getElementById('mobMenu');
+  const mobLinks  = document.querySelectorAll('.mob-link');
+
+  function openMenu() {
+    hamburger.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    mobMenu.classList.add('open');
+    mobMenu.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('menu-open');
+  }
+  function closeMenu() {
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    mobMenu.classList.remove('open');
+    mobMenu.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('menu-open');
+  }
+
+  hamburger.addEventListener('click', () => {
+    mobMenu.classList.contains('open') ? closeMenu() : openMenu();
+  });
+  mobLinks.forEach(l => l.addEventListener('click', closeMenu));
+
+  // Close on escape
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
+  // Footer accordion (mobile only)
+  document.querySelectorAll('.footer-col-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if(window.innerWidth > 768) return;
+      const col = btn.parentElement;
+      const isOpen = col.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.footer-col').forEach(c => {
+        c.classList.remove('open');
+        c.querySelector('.footer-col-toggle').setAttribute('aria-expanded', 'false');
+      });
+      // Open clicked if it was closed
+      if(!isOpen) {
+        col.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
