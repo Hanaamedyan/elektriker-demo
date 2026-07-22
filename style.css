@@ -606,7 +606,7 @@ footer .footer-badge-dot { background: var(--yellow); }
   .contact { padding: 5rem 1.4rem; grid-template-columns: 1fr; gap: 3rem; }
   .form-row { grid-template-columns: 1fr; }
   footer { padding: 2rem 1.4rem calc(1.5rem + 80px); }
-  .footer-top { flex-direction: column; gap: 0; padding-bottom: 1rem; }
+  .footer-top { flex-direction: column; align-items: stretch; gap: 0; padding-bottom: 1rem; }
   .footer-brand { padding-bottom: 1.4rem; border-bottom: 1px solid rgba(255,255,255,.08); margin-bottom: .2rem; }
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: .5rem; }
   .footer-col { border-bottom: 1px solid rgba(255,255,255,.08); padding: .2rem 0; width: 100%; }
