@@ -87,8 +87,8 @@
 
 <!-- ── STATS ── -->
 <div class="stats-bar">
-  <div class="stat-item reveal"><div class="stat-num">200+</div><div class="stat-label">Fullførte oppdrag</div></div>
-  <div class="stat-item reveal"><div class="stat-num">15+</div><div class="stat-label">År med erfaring</div></div>
+  <div class="stat-item reveal"><div class="stat-num" data-target="200" data-suffix="+">200+</div><div class="stat-label">Fullførte oppdrag</div></div>
+  <div class="stat-item reveal"><div class="stat-num" data-target="15" data-suffix="+">15+</div><div class="stat-label">År med erfaring</div></div>
   <div class="stat-item reveal"><div class="stat-num">24/7</div><div class="stat-label">Nødberedskap</div></div>
 </div>
 
@@ -413,6 +413,29 @@
       }
     });
   });
+
+  // Counter animation for stats
+  function animateCount(el) {
+    const target = el.dataset.target;
+    const suffix = el.dataset.suffix || '';
+    if (!target || target.includes('/')) { return; }
+    const end = parseInt(target);
+    const dur = 1400;
+    const start = performance.now();
+    function step(now) {
+      const p = Math.min((now - start) / dur, 1);
+      const ease = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.floor(ease * end) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  const statObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { animateCount(e.target); statObserver.unobserve(e.target); }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.stat-num[data-target]').forEach(el => statObserver.observe(el));
 
   // Scroll reveal
   const observer = new IntersectionObserver(entries => {
