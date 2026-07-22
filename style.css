@@ -621,7 +621,7 @@ footer .footer-badge-dot { background: var(--yellow); }
     display: grid; grid-template-columns: 1fr 1fr;
     gap: .75rem; margin: 1.4rem 0 2rem;
   }
-  .gallery-sell-points li { flex-direction: column; gap: .4rem; }
+  .gallery-sell-points li { flex-direction: row; align-items: center; gap: .6rem; }
   .gallery-sell-icon { width: 30px; height: 30px; margin-top: 0; border-radius: 6px; }
   .gallery-sell-icon svg { width: 13px; height: 13px; }
   .gallery-sell-title { font-size: .78rem; margin-bottom: 0; }
