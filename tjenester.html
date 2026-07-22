@@ -129,8 +129,32 @@
   .svc-detail-cta svg { width: 14px; height: 14px; stroke: #1a3050; fill: none; stroke-width: 2.5; }
   .svc-detail-cta:hover { gap: .7rem; }
 
+  /* Accordion toggle */
+  .svc-detail-toggle {
+    display: none;
+    width: 100%; align-items: center; justify-content: space-between;
+    background: none; border: none; border-top: 1px solid rgba(0,0,0,.08);
+    padding: .9rem 0 0; margin-top: .8rem; margin-bottom: 0;
+    cursor: pointer; font-family: 'Oswald', sans-serif;
+    font-weight: 600; font-size: .82rem; letter-spacing: .1em;
+    text-transform: uppercase; color: #1a3050;
+  }
+  .svc-toggle-icon {
+    font-size: 1.3rem; line-height: 1; color: var(--yamb);
+    transition: transform .25s ease; font-family: monospace;
+  }
+  .svc-detail-card.open .svc-toggle-icon { transform: rotate(45deg); }
+
+  .svc-detail-expand { overflow: hidden; transition: max-height .35s cubic-bezier(.22,1,.36,1); }
+
   @media(max-width:900px) { .svc-detail-grid { grid-template-columns: 1fr; } }
-  @media(max-width:600px) { .svc-section { padding: 4rem 1.4rem 5rem; } .svc-detail-body { padding: 1.8rem 1.6rem 2rem; } }
+  @media(max-width:600px) {
+    .svc-section { padding: 4rem 1.4rem 5rem; }
+    .svc-detail-body { padding: 1.8rem 1.6rem 2rem; }
+    .svc-detail-toggle { display: flex; }
+    .svc-detail-expand { max-height: 0; }
+    .svc-detail-card.open .svc-detail-expand { max-height: 600px; }
+  }
 </style>
 
 <section class="svc-section">
@@ -142,26 +166,25 @@
       <div class="svc-detail-body">
         <div class="svc-detail-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
         <div class="svc-detail-name">Elektrisk installasjon</div>
-        <p class="svc-detail-lead">
-          Vi utfører full elektrisk installasjon for bolig, hytte og næringslokale — fra planlegging og prosjektering til ferdig utførelse og dokumentasjon. Alle oppdrag følger NEK 400 og gjeldende forskrifter, og du mottar samsvarserklæring ved ferdigstillelse.
-        </p>
-        <p class="svc-detail-lead" style="margin-bottom:1.5rem;">
-          Enten du bygger nytt, rehabiliterer et gammelt anlegg eller utvider eksisterende kapasitet, stiller vi med rett kompetanse og utstyr for jobben.
-        </p>
-        <div class="svc-detail-divider"></div>
-        <ul class="svc-detail-list">
-          <li>Ny installasjon i bolig, hytte og fritidsbygg</li>
-          <li>Rehabilitering og oppgradering av eksisterende anlegg</li>
-          <li>Næringsbygg, lagerbygg og industrianlegg</li>
-          <li>Sikringsskap, fordelere og kursopplegg</li>
-          <li>Stikkontakter, lysopplegg og dimmer</li>
-          <li>Utendørs installasjoner og utebelysning</li>
-          <li>Komplett dokumentasjon og samsvarserklæring</li>
-        </ul>
-        <a href="kontakt.html" class="svc-detail-cta">
-          Få gratis befaring
-          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
+        <p class="svc-detail-lead">Vi utfører full elektrisk installasjon for bolig, hytte og næringslokale — fra planlegging og prosjektering til ferdig utførelse og dokumentasjon.</p>
+        <p class="svc-detail-lead">Enten du bygger nytt, rehabiliterer et gammelt anlegg eller utvider eksisterende kapasitet, stiller vi med rett kompetanse og utstyr for jobben.</p>
+        <button class="svc-detail-toggle" aria-expanded="false">
+          <span class="svc-toggle-label">Se hva vi tilbyr</span>
+          <span class="svc-toggle-icon">+</span>
+        </button>
+        <div class="svc-detail-expand">
+          <div class="svc-detail-divider" style="margin-top:1.2rem;"></div>
+          <ul class="svc-detail-list">
+            <li>Ny installasjon i bolig, hytte og fritidsbygg</li>
+            <li>Rehabilitering og oppgradering av eksisterende anlegg</li>
+            <li>Næringsbygg, lagerbygg og industrianlegg</li>
+            <li>Sikringsskap, fordelere og kursopplegg</li>
+            <li>Stikkontakter, lysopplegg og dimmer</li>
+            <li>Utendørs installasjoner og utebelysning</li>
+            <li>Komplett dokumentasjon og samsvarserklæring</li>
+          </ul>
+          <a href="kontakt.html" class="svc-detail-cta">Få gratis befaring <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
       </div>
     </div>
 
@@ -171,26 +194,25 @@
       <div class="svc-detail-body">
         <div class="svc-detail-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <div class="svc-detail-name">El-sjekk &amp; Inspeksjon</div>
-        <p class="svc-detail-lead">
-          En grundig el-sjekk kan avsløre farlige feil i ditt elektriske anlegg — feil du kanskje ikke visste om. Vi gjennomgår hele anlegget systematisk og leverer en detaljert skriftlig rapport med tilstandsvurdering og prioriterte anbefalinger.
-        </p>
-        <p class="svc-detail-lead" style="margin-bottom:1.5rem;">
-          El-sjekk anbefales for boliger eldre enn 20 år, ved kjøp eller salg av bolig, eller om du er usikker på tilstanden til anlegget ditt.
-        </p>
-        <div class="svc-detail-divider"></div>
-        <ul class="svc-detail-list">
-          <li>Kontroll av sikringsskap, kabler og koblinger</li>
-          <li>Måling av jordfeil og isolasjonsresistans</li>
-          <li>Termografering av koblingspunkter</li>
-          <li>Kontroll av jording og potensialutjevning</li>
-          <li>Detaljert skriftlig tilstandsrapport</li>
-          <li>Prioriterte anbefalinger og kostnadsestimat</li>
-          <li>Egnet ved kjøp, salg og forsikringskrav</li>
-        </ul>
-        <a href="kontakt.html" class="svc-detail-cta">
-          Bestill el-sjekk
-          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
+        <p class="svc-detail-lead">En grundig el-sjekk kan avsløre farlige feil i ditt elektriske anlegg. Vi gjennomgår hele anlegget systematisk og leverer en detaljert skriftlig rapport med tilstandsvurdering.</p>
+        <p class="svc-detail-lead">El-sjekk anbefales for boliger eldre enn 20 år, ved kjøp eller salg av bolig, eller om du er usikker på tilstanden til anlegget ditt.</p>
+        <button class="svc-detail-toggle" aria-expanded="false">
+          <span class="svc-toggle-label">Se hva vi tilbyr</span>
+          <span class="svc-toggle-icon">+</span>
+        </button>
+        <div class="svc-detail-expand">
+          <div class="svc-detail-divider" style="margin-top:1.2rem;"></div>
+          <ul class="svc-detail-list">
+            <li>Kontroll av sikringsskap, kabler og koblinger</li>
+            <li>Måling av jordfeil og isolasjonsresistans</li>
+            <li>Termografering av koblingspunkter</li>
+            <li>Kontroll av jording og potensialutjevning</li>
+            <li>Detaljert skriftlig tilstandsrapport</li>
+            <li>Prioriterte anbefalinger og kostnadsestimat</li>
+            <li>Egnet ved kjøp, salg og forsikringskrav</li>
+          </ul>
+          <a href="kontakt.html" class="svc-detail-cta">Bestill el-sjekk <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
       </div>
     </div>
 
@@ -200,26 +222,25 @@
       <div class="svc-detail-body">
         <div class="svc-detail-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg></div>
         <div class="svc-detail-name">Ladeboks &amp; Varmepumpe</div>
-        <p class="svc-detail-lead">
-          Vi er sertifisert installatør for de ledende merkene innen elbil-ladere og varmepumper. Vi tar oss av hele prosessen — fra befaring og rådgivning til ferdig installasjon, dokumentasjon og hjelp med Enova-søknad der det er aktuelt.
-        </p>
-        <p class="svc-detail-lead" style="margin-bottom:1.5rem;">
-          Riktig installasjon er avgjørende for sikkerhet og levetid. Ikke risiker det med usertifiserte installatører.
-        </p>
-        <div class="svc-detail-divider"></div>
-        <ul class="svc-detail-list">
-          <li>Ladeboks for elbil — alle merker og modeller</li>
-          <li>11 kW og 22 kW ladestasjoner</li>
-          <li>Lastbalansering og smarthus-integrasjon</li>
-          <li>Luft-luft og luft-vann varmepumper</li>
-          <li>Montering av varmepumpe inne og ute</li>
-          <li>Enova-støtte — vi hjelper med søknaden</li>
-          <li>Komplett dokumentasjon og garantier</li>
-        </ul>
-        <a href="kontakt.html" class="svc-detail-cta">
-          Få tilbud på ladeboks
-          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
+        <p class="svc-detail-lead">Vi er sertifisert installatør for de ledende merkene innen elbil-ladere og varmepumper. Vi tar oss av hele prosessen — fra befaring til ferdig installasjon og Enova-søknad.</p>
+        <p class="svc-detail-lead">Riktig installasjon er avgjørende for sikkerhet og levetid. Ikke risiker det med usertifiserte installatører.</p>
+        <button class="svc-detail-toggle" aria-expanded="false">
+          <span class="svc-toggle-label">Se hva vi tilbyr</span>
+          <span class="svc-toggle-icon">+</span>
+        </button>
+        <div class="svc-detail-expand">
+          <div class="svc-detail-divider" style="margin-top:1.2rem;"></div>
+          <ul class="svc-detail-list">
+            <li>Ladeboks for elbil — alle merker og modeller</li>
+            <li>11 kW og 22 kW ladestasjoner</li>
+            <li>Lastbalansering og smarthus-integrasjon</li>
+            <li>Luft-luft og luft-vann varmepumper</li>
+            <li>Montering av varmepumpe inne og ute</li>
+            <li>Enova-støtte — vi hjelper med søknaden</li>
+            <li>Komplett dokumentasjon og garantier</li>
+          </ul>
+          <a href="kontakt.html" class="svc-detail-cta">Få tilbud på ladeboks <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
       </div>
     </div>
 
@@ -229,26 +250,25 @@
       <div class="svc-detail-body">
         <div class="svc-detail-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14M15.54 8.46a5 5 0 010 7.07M8.46 8.46a5 5 0 000 7.07"/></svg></div>
         <div class="svc-detail-name">Vedlikehold &amp; Feilsøking</div>
-        <p class="svc-detail-lead">
-          Elektriske feil kan skje når som helst — og noen ganger er de farlige. Vi rykker raskt ut, finner årsaken og utbedrer feilen effektivt, uansett tidspunkt på døgnet. Du slipper å sitte i mørket lenge.
-        </p>
-        <p class="svc-detail-lead" style="margin-bottom:1.5rem;">
-          Vi tilbyr også serviceavtaler for borettslag og næringsbygg som sikrer regelmessig vedlikehold og rask respons ved driftsavbrudd.
-        </p>
-        <div class="svc-detail-divider"></div>
-        <ul class="svc-detail-list">
-          <li>Nødberedskap 24/7 — vi svarer alltid</li>
-          <li>Normal utrykningstid 1–2 timer</li>
-          <li>Feilsøking i kabler, kretser og komponenter</li>
-          <li>Reparasjon og utskifting av sikringsskap</li>
-          <li>Bytte av defekte stikkontakter og brytere</li>
-          <li>Periodisk vedlikehold og kontroll</li>
-          <li>Serviceavtaler for borettslag og næring</li>
-        </ul>
-        <a href="kontakt.html" class="svc-detail-cta">
-          Ring oss nå — 24/7
-          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
+        <p class="svc-detail-lead">Elektriske feil kan skje når som helst — og noen ganger er de farlige. Vi rykker raskt ut, finner årsaken og utbedrer feilen effektivt, uansett tidspunkt på døgnet.</p>
+        <p class="svc-detail-lead">Vi tilbyr også serviceavtaler for borettslag og næringsbygg som sikrer regelmessig vedlikehold og rask respons ved driftsavbrudd.</p>
+        <button class="svc-detail-toggle" aria-expanded="false">
+          <span class="svc-toggle-label">Se hva vi tilbyr</span>
+          <span class="svc-toggle-icon">+</span>
+        </button>
+        <div class="svc-detail-expand">
+          <div class="svc-detail-divider" style="margin-top:1.2rem;"></div>
+          <ul class="svc-detail-list">
+            <li>Nødberedskap 24/7 — vi svarer alltid</li>
+            <li>Normal utrykningstid 1–2 timer</li>
+            <li>Feilsøking i kabler, kretser og komponenter</li>
+            <li>Reparasjon og utskifting av sikringsskap</li>
+            <li>Bytte av defekte stikkontakter og brytere</li>
+            <li>Periodisk vedlikehold og kontroll</li>
+            <li>Serviceavtaler for borettslag og næring</li>
+          </ul>
+          <a href="kontakt.html" class="svc-detail-cta">Ring oss nå — 24/7 <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
       </div>
     </div>
 
@@ -338,6 +358,25 @@
   });
   const observer = new IntersectionObserver(entries => { entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }); }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Service card accordion (mobile only)
+  document.querySelectorAll('.svc-detail-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (window.innerWidth > 600) return;
+      const card = btn.closest('.svc-detail-card');
+      const isOpen = card.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.svc-detail-card').forEach(c => {
+        c.classList.remove('open');
+        c.querySelector('.svc-detail-toggle').setAttribute('aria-expanded', 'false');
+      });
+      // Open clicked if it was closed
+      if (!isOpen) {
+        card.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
 </script>
 </body>
 </html>
