@@ -210,26 +210,56 @@
 
 <!-- ── WHY US ── -->
 <section class="why">
-  <div class="section-eyebrow">Hvorfor velge oss</div>
-  <h2 class="section-title reveal">Trygghet i<br><span class="accent">hvert oppdrag</span></h2>
-  <div class="why-grid">
-    <div class="why-card reveal">
-      <div class="why-card-num">01</div>
-      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-      <div class="why-title">Fast pris — ingen overraskelser</div>
-      <p class="why-desc">Vi gir deg et klart og detaljert tilbud på forhånd. Ingen skjulte kostnader. Du vet hva du betaler før vi starter.</p>
+  <div class="why-inner">
+    <!-- Left: cards -->
+    <div class="why-left">
+      <div class="section-eyebrow">Hvorfor velge oss</div>
+      <h2 class="section-title reveal" style="margin-bottom:2.5rem;">Trygghet i<br><span class="accent">hvert oppdrag</span></h2>
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="why-card-num">01</div>
+          <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <div class="why-title">Fast pris — ingen overraskelser</div>
+          <p class="why-desc">Vi gir deg et klart og detaljert tilbud på forhånd. Ingen skjulte kostnader. Du vet hva du betaler før vi starter.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-card-num">02</div>
+          <div class="why-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div class="why-title">Rask responstid</div>
+          <p class="why-desc">Vi svarer innen én time og stiller med elektriker samme dag ved akutte feil. Nødberedskap 24/7.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-card-num">03</div>
+          <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="why-title">Autorisert og forsikret</div>
+          <p class="why-desc">Fullt autorisert elinstallasjonsforetak. Alle oppdrag utføres etter NEK 400 og FEL med fullstendig samsvarserklæring.</p>
+        </div>
+      </div>
     </div>
-    <div class="why-card reveal">
-      <div class="why-card-num">02</div>
-      <div class="why-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-      <div class="why-title">Rask responstid</div>
-      <p class="why-desc">Vi svarer innen én time og stiller med elektriker samme dag ved akutte feil. Nødberedskap 24/7.</p>
-    </div>
-    <div class="why-card reveal">
-      <div class="why-card-num">03</div>
-      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-      <div class="why-title">Autorisert og forsikret</div>
-      <p class="why-desc">Fullt autorisert elinstallasjonsforetak. Alle oppdrag utføres etter NEK 400 og FEL med fullstendig samsvarserklæring.</p>
+
+    <!-- Right: testimonial card stack -->
+    <div class="why-right">
+      <div class="testimonial-label">
+        <span class="section-eyebrow" style="margin-bottom:.6rem;">Hva kundene sier</span>
+        <p class="testimonial-hint">Dra kortet til venstre for neste →</p>
+      </div>
+      <div class="testimonial-stack" id="testimonialStack">
+        <div class="t-card" data-pos="back">
+          <img src="https://i.pravatar.cc/128?img=47" alt="Kunde" class="t-avatar"/>
+          <p class="t-quote">"Elektriker kom samme dag. Imponerende rask og ryddig jobb fra start til slutt!"</p>
+          <span class="t-author">— Mari Eriksen, Trondheim</span>
+        </div>
+        <div class="t-card" data-pos="middle">
+          <img src="https://i.pravatar.cc/128?img=32" alt="Kunde" class="t-avatar"/>
+          <p class="t-quote">"Fast pris og ingen overraskelser. Nøyaktig det vi trengte. Anbefales på det sterkeste!"</p>
+          <span class="t-author">— Ole Hansen, Stjørdal</span>
+        </div>
+        <div class="t-card" data-pos="front">
+          <img src="https://i.pravatar.cc/128?img=5" alt="Kunde" class="t-avatar"/>
+          <p class="t-quote">"Utrolig profesjonell jobb. Vi fikk samsvarserklæring samme dag og alt fungerte perfekt."</p>
+          <span class="t-author">— Kari Nordmann, Malvik</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -432,6 +462,60 @@
     });
   }, { threshold: 0.5 });
   document.querySelectorAll('.stat-num[data-target]').forEach(el => statObserver.observe(el));
+
+  // Testimonial card stack — drag to shuffle
+  (function() {
+    const stack = document.getElementById('testimonialStack');
+    if (!stack) return;
+    const positions = ['front', 'middle', 'back'];
+
+    function getCards() {
+      return [...stack.querySelectorAll('.t-card')];
+    }
+
+    function shuffle() {
+      const cards = getCards();
+      // rotate positions: front→back, middle→front, back→middle
+      cards.forEach(card => {
+        const cur = card.dataset.pos;
+        card.dataset.pos = cur === 'front' ? 'back' : cur === 'middle' ? 'front' : 'middle';
+      });
+    }
+
+    // Pointer drag on front card
+    let startX = 0, isDragging = false, dragX = 0;
+
+    stack.addEventListener('pointerdown', e => {
+      const front = stack.querySelector('.t-card[data-pos="front"]');
+      if (!front || !front.contains(e.target)) return;
+      isDragging = true; startX = e.clientX; dragX = 0;
+      front.classList.add('dragging');
+      front.setPointerCapture(e.pointerId);
+    });
+
+    stack.addEventListener('pointermove', e => {
+      if (!isDragging) return;
+      dragX = e.clientX - startX;
+      const front = stack.querySelector('.t-card[data-pos="front"]');
+      if (front) {
+        const rot = -6 + dragX * 0.05;
+        front.style.transform = `rotate(${rot}deg) translateX(${dragX}px)`;
+        front.style.opacity = Math.max(0.4, 1 - Math.abs(dragX) / 300);
+      }
+    });
+
+    stack.addEventListener('pointerup', e => {
+      if (!isDragging) return;
+      isDragging = false;
+      const front = stack.querySelector('.t-card[data-pos="front"]');
+      if (!front) return;
+      front.classList.remove('dragging');
+      front.style.transform = '';
+      front.style.opacity = '';
+      if (dragX < -150) shuffle();
+      dragX = 0;
+    });
+  })();
 
   // Scroll reveal
   const observer = new IntersectionObserver(entries => {
