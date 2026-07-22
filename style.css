@@ -599,7 +599,33 @@ footer .footer-badge-dot { background: var(--yellow); }
   .about-img-wrap img { height: 320px; }
   .about-img-badge { bottom: 1rem; left: 1rem; padding: .8rem 1rem; }
   .about-badge-num { font-size: 1.6rem; }
-  .gallery { padding: 5rem 1.4rem; grid-template-columns: 1fr; gap: 2.5rem; }
+  /* Gallery / "Vi leverer mer" — mobile redesign */
+  .gallery {
+    padding: 0 0 4rem;
+    grid-template-columns: 1fr; gap: 0;
+  }
+
+  /* Video full-width on top, video comes second in HTML but first visually */
+  .gallery-video-wrap {
+    order: -1;
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 0;
+  }
+  .gallery-video-wrap video { aspect-ratio: 16/9; }
+
+  .gallery-text { padding: 2.4rem 1.4rem 0; }
+
+  /* Sell points: 2-column compact grid, hide descriptions */
+  .gallery-sell-points {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: .75rem; margin: 1.4rem 0 2rem;
+  }
+  .gallery-sell-points li { flex-direction: column; gap: .4rem; }
+  .gallery-sell-icon { width: 30px; height: 30px; margin-top: 0; border-radius: 6px; }
+  .gallery-sell-icon svg { width: 13px; height: 13px; }
+  .gallery-sell-title { font-size: .78rem; margin-bottom: 0; }
+  .gallery-sell-desc { display: none; }
   /* Why section — full mobile redesign */
   .why { padding: 5rem 0; overflow: hidden; }
   .why::before { display: none; }
