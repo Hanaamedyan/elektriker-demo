@@ -60,29 +60,210 @@
   <h1 class="page-banner-title">Våre<br><span class="accent">Tjenester</span></h1>
 </div>
 
-<!-- ── SERVICES ── -->
-<section class="services" style="padding-top:5rem;">
-  <div class="services-grid">
-    <div class="service-card reveal">
-      <div class="service-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-      <div class="service-name">Elektrisk installasjon</div>
-      <p class="service-desc">Full elektrisk installasjon for nye bygg og rehabilitering av eksisterende anlegg. Bolig, hytte og næringslokale. Vi planlegger, prosjekterer og utfører alt etter NEK 400 og gjeldende forskrifter.</p>
+<!-- ── SERVICES DETAIL ── -->
+<style>
+  .svc-section { background: var(--light2); padding: 5rem 3rem 7rem; }
+  .svc-detail-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 2rem; max-width: 1300px; margin: 0 auto;
+  }
+  .svc-detail-card {
+    background: var(--white); border-radius: 14px; overflow: hidden;
+    border-left: 4px solid var(--yellow);
+    box-shadow: 0 2px 16px rgba(0,0,0,.07), 0 1px 4px rgba(0,0,0,.04);
+    display: flex; flex-direction: column;
+    transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s;
+  }
+  .svc-detail-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,.11); }
+
+  /* Image placeholder — replace src later */
+  .svc-detail-img {
+    width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;
+    background: var(--light2);
+  }
+  .svc-detail-img-placeholder {
+    width: 100%; aspect-ratio: 16/9;
+    background: linear-gradient(135deg, var(--light2) 0%, var(--light1) 100%);
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: .6rem;
+  }
+  .svc-detail-img-placeholder svg { width: 40px; height: 40px; stroke: rgba(26,22,16,.2); fill: none; stroke-width: 1.5; }
+  .svc-detail-img-placeholder span { font-family: 'DM Mono', monospace; font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(26,22,16,.3); }
+
+  .svc-detail-body { padding: 2.2rem 2.2rem 2.4rem; display: flex; flex-direction: column; flex: 1; }
+  .svc-detail-icon {
+    width: 44px; height: 44px; background: #1a3050; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.2rem; box-shadow: 0 4px 14px rgba(26,48,80,.2);
+  }
+  .svc-detail-icon svg { width: 20px; height: 20px; stroke: #fff; fill: none; stroke-width: 2; }
+  .svc-detail-name {
+    font-family: 'Oswald', sans-serif; font-weight: 700;
+    font-size: 1.5rem; letter-spacing: .03em; text-transform: uppercase;
+    color: var(--black); margin-bottom: .9rem; line-height: 1;
+  }
+  .svc-detail-lead {
+    font-size: .95rem; line-height: 1.85; color: rgba(26,22,16,.78);
+    font-weight: 400; margin-bottom: 1.5rem;
+  }
+  .svc-detail-divider { width: 36px; height: 2px; background: var(--yellow); margin-bottom: 1.4rem; }
+  .svc-detail-list {
+    list-style: none; display: flex; flex-direction: column; gap: .65rem;
+    margin-bottom: 1.8rem; flex: 1;
+  }
+  .svc-detail-list li {
+    display: flex; align-items: flex-start; gap: .75rem;
+    font-size: .88rem; color: rgba(26,22,16,.75); font-weight: 400; line-height: 1.5;
+  }
+  .svc-detail-list li::before {
+    content: ''; flex-shrink: 0; width: 16px; height: 16px; margin-top: .12rem;
+    background: #1a3050 url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2.2' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='3 8 7 12 13 4'/%3E%3C/svg%3E") center/9px no-repeat;
+    border-radius: 4px;
+  }
+  .svc-detail-cta {
+    display: inline-flex; align-items: center; gap: .45rem;
+    font-family: 'Oswald', sans-serif; font-weight: 600;
+    font-size: .78rem; letter-spacing: .1em; text-transform: uppercase;
+    color: #1a3050; transition: gap .2s;
+  }
+  .svc-detail-cta svg { width: 14px; height: 14px; stroke: #1a3050; fill: none; stroke-width: 2.5; }
+  .svc-detail-cta:hover { gap: .7rem; }
+
+  @media(max-width:900px) { .svc-detail-grid { grid-template-columns: 1fr; } }
+  @media(max-width:600px) { .svc-section { padding: 4rem 1.4rem 5rem; } .svc-detail-body { padding: 1.8rem 1.6rem 2rem; } }
+</style>
+
+<section class="svc-section">
+  <div class="svc-detail-grid">
+
+    <!-- 1. Elektrisk installasjon -->
+    <div class="svc-detail-card reveal">
+      <div class="svc-detail-img-placeholder">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        <span>Bilde kommer</span>
+      </div>
+      <div class="svc-detail-body">
+        <div class="svc-detail-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <div class="svc-detail-name">Elektrisk installasjon</div>
+        <p class="svc-detail-lead">
+          Vi utfører full elektrisk installasjon for bolig, hytte og næringslokale — fra planlegging og prosjektering til ferdig utførelse og dokumentasjon. Alle oppdrag følger NEK 400 og gjeldende forskrifter, og du mottar samsvarserklæring ved ferdigstillelse.
+        </p>
+        <p class="svc-detail-lead" style="margin-bottom:1.5rem;">
+          Enten du bygger nytt, rehabiliterer et gammelt anlegg eller utvider eksisterende kapasitet, stiller vi med rett kompetanse og utstyr for jobben.
+        </p>
+        <div class="svc-detail-divider"></div>
+        <ul class="svc-detail-list">
+          <li>Ny installasjon i bolig, hytte og fritidsbygg</li>
+          <li>Rehabilitering og oppgradering av eksisterende anlegg</li>
+          <li>Næringsbygg, lagerbygg og industrianlegg</li>
+          <li>Sikringsskap, fordelere og kursopplegg</li>
+          <li>Stikkontakter, lysopplegg og dimmer</li>
+          <li>Utendørs installasjoner og utebelysning</li>
+          <li>Komplett dokumentasjon og samsvarserklæring</li>
+        </ul>
+        <a href="kontakt.html" class="svc-detail-cta">
+          Få gratis befaring
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
     </div>
-    <div class="service-card reveal">
-      <div class="service-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-      <div class="service-name">El-sjekk &amp; Inspeksjon</div>
-      <p class="service-desc">Grundig el-sjekk av ditt anlegg etter gjeldende forskrifter. Rapport og anbefalinger inkludert. Trygghet for deg og familien — vi finner feil før de blir farlige.</p>
+
+    <!-- 2. El-sjekk & Inspeksjon -->
+    <div class="svc-detail-card reveal">
+      <div class="svc-detail-img-placeholder">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        <span>Bilde kommer</span>
+      </div>
+      <div class="svc-detail-body">
+        <div class="svc-detail-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="svc-detail-name">El-sjekk &amp; Inspeksjon</div>
+        <p class="svc-detail-lead">
+          En grundig el-sjekk kan avsløre farlige feil i ditt elektriske anlegg — feil du kanskje ikke visste om. Vi gjennomgår hele anlegget systematisk og leverer en detaljert skriftlig rapport med tilstandsvurdering og prioriterte anbefalinger.
+        </p>
+        <p class="svc-detail-lead" style="margin-bottom:1.5rem;">
+          El-sjekk anbefales for boliger eldre enn 20 år, ved kjøp eller salg av bolig, eller om du er usikker på tilstanden til anlegget ditt.
+        </p>
+        <div class="svc-detail-divider"></div>
+        <ul class="svc-detail-list">
+          <li>Kontroll av sikringsskap, kabler og koblinger</li>
+          <li>Måling av jordfeil og isolasjonsresistans</li>
+          <li>Termografering av koblingspunkter</li>
+          <li>Kontroll av jording og potensialutjevning</li>
+          <li>Detaljert skriftlig tilstandsrapport</li>
+          <li>Prioriterte anbefalinger og kostnadsestimat</li>
+          <li>Egnet ved kjøp, salg og forsikringskrav</li>
+        </ul>
+        <a href="kontakt.html" class="svc-detail-cta">
+          Bestill el-sjekk
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
     </div>
-    <div class="service-card reveal">
-      <div class="service-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg></div>
-      <div class="service-name">Ladeboks &amp; Varmepumpe</div>
-      <p class="service-desc">Installasjon av elbil-lader og varmepumpe. Vi tar oss av alt fra planlegging til ferdig montert og godkjent anlegg — inkludert søknad om støtte fra Enova der det er aktuelt.</p>
+
+    <!-- 3. Ladeboks & Varmepumpe -->
+    <div class="svc-detail-card reveal">
+      <div class="svc-detail-img-placeholder">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        <span>Bilde kommer</span>
+      </div>
+      <div class="svc-detail-body">
+        <div class="svc-detail-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg></div>
+        <div class="svc-detail-name">Ladeboks &amp; Varmepumpe</div>
+        <p class="svc-detail-lead">
+          Vi er sertifisert installatør for de ledende merkene innen elbil-ladere og varmepumper. Vi tar oss av hele prosessen — fra befaring og rådgivning til ferdig installasjon, dokumentasjon og hjelp med Enova-søknad der det er aktuelt.
+        </p>
+        <p class="svc-detail-lead" style="margin-bottom:1.5rem;">
+          Riktig installasjon er avgjørende for sikkerhet og levetid. Ikke risiker det med usertifiserte installatører.
+        </p>
+        <div class="svc-detail-divider"></div>
+        <ul class="svc-detail-list">
+          <li>Ladeboks for elbil — alle merker og modeller</li>
+          <li>11 kW og 22 kW ladestasjoner</li>
+          <li>Lastbalansering og smarthus-integrasjon</li>
+          <li>Luft-luft og luft-vann varmepumper</li>
+          <li>Montering av varmepumpe inne og ute</li>
+          <li>Enova-støtte — vi hjelper med søknaden</li>
+          <li>Komplett dokumentasjon og garantier</li>
+        </ul>
+        <a href="kontakt.html" class="svc-detail-cta">
+          Få tilbud på ladeboks
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
     </div>
-    <div class="service-card reveal">
-      <div class="service-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14M15.54 8.46a5 5 0 010 7.07M8.46 8.46a5 5 0 000 7.07"/></svg></div>
-      <div class="service-name">Vedlikehold &amp; Feilsøking</div>
-      <p class="service-desc">Raskt utrykning ved feil. Vi finner og utbedrer feil i elektriske anlegg — uansett om det er dag, kveld eller helg. Nødberedskap 24 timer i døgnet.</p>
+
+    <!-- 4. Vedlikehold & Feilsøking -->
+    <div class="svc-detail-card reveal">
+      <div class="svc-detail-img-placeholder">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        <span>Bilde kommer</span>
+      </div>
+      <div class="svc-detail-body">
+        <div class="svc-detail-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14M15.54 8.46a5 5 0 010 7.07M8.46 8.46a5 5 0 000 7.07"/></svg></div>
+        <div class="svc-detail-name">Vedlikehold &amp; Feilsøking</div>
+        <p class="svc-detail-lead">
+          Elektriske feil kan skje når som helst — og noen ganger er de farlige. Vi rykker raskt ut, finner årsaken og utbedrer feilen effektivt, uansett tidspunkt på døgnet. Du slipper å sitte i mørket lenge.
+        </p>
+        <p class="svc-detail-lead" style="margin-bottom:1.5rem;">
+          Vi tilbyr også serviceavtaler for borettslag og næringsbygg som sikrer regelmessig vedlikehold og rask respons ved driftsavbrudd.
+        </p>
+        <div class="svc-detail-divider"></div>
+        <ul class="svc-detail-list">
+          <li>Nødberedskap 24/7 — vi svarer alltid</li>
+          <li>Normal utrykningstid 1–2 timer</li>
+          <li>Feilsøking i kabler, kretser og komponenter</li>
+          <li>Reparasjon og utskifting av sikringsskap</li>
+          <li>Bytte av defekte stikkontakter og brytere</li>
+          <li>Periodisk vedlikehold og kontroll</li>
+          <li>Serviceavtaler for borettslag og næring</li>
+        </ul>
+        <a href="kontakt.html" class="svc-detail-cta">
+          Ring oss nå — 24/7
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
     </div>
+
   </div>
 </section>
 
