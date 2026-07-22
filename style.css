@@ -394,7 +394,7 @@ nav.nav-dark .nav-hamburger span { background: var(--black); }
   position: relative; border-radius: 14px; overflow: hidden;
   box-shadow: 0 20px 60px rgba(0,0,0,.15), 0 4px 16px rgba(0,0,0,.08);
 }
-.gallery-video-wrap video { width: 100%; display: block; aspect-ratio: 9/16; object-fit: cover; }
+.gallery-video-wrap video { width: 100%; display: block; aspect-ratio: 3/4; object-fit: cover; }
 
 /* ── WHY US ── */
 .why {
