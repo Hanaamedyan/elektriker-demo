@@ -609,7 +609,7 @@ footer .footer-badge-dot { background: var(--yellow); }
   .footer-top { flex-direction: column; gap: 0; padding-bottom: 1rem; }
   .footer-brand { padding-bottom: 1.4rem; border-bottom: 1px solid rgba(255,255,255,.08); margin-bottom: .2rem; }
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: .5rem; }
-  .footer-col { border-bottom: 1px solid rgba(255,255,255,.08); padding: .2rem 0; }
+  .footer-col { border-bottom: 1px solid rgba(255,255,255,.08); padding: .2rem 0; width: 100%; }
   .footer-col-icon { display: block; }
   .footer-col-toggle { margin-bottom: 0; padding: .85rem 0; }
   .footer-col ul { max-height: 0; gap: 0; transition: max-height .3s ease, gap .3s ease; }
