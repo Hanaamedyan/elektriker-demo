@@ -627,44 +627,57 @@ footer .footer-badge-dot { background: var(--yellow); }
   .gallery-sell-title { font-size: .78rem; margin-bottom: 0; }
   .gallery-sell-desc { display: none; }
   /* Why section — full mobile redesign */
-  .why { padding: 5rem 0; overflow: hidden; }
+  /* ── WHY SECTION — mobile ── */
+  .why { padding: 4rem 1.4rem 5rem; overflow: hidden; }
   .why::before { display: none; }
-  .why .section-eyebrow,
-  .why .section-title { padding: 0 1.4rem; }
-  .why-inner { display: flex; flex-direction: column; gap: 3rem; }
-  .why-left { display: flex; flex-direction: column; }
+  .why-inner { display: flex; flex-direction: column; gap: 0; }
 
-  /* Horizontal swipe strip for why-cards */
+  /* Section header */
+  .why .section-title { margin-bottom: 2rem; font-size: clamp(2rem,9vw,3rem); }
+
+  /* Why-cards: compact feature rows (no horizontal scroll) */
   .why-grid {
-    display: flex; flex-direction: row;
-    overflow-x: auto; scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    gap: .9rem;
-    padding: 0 1.4rem 1rem;
-    margin-top: 1.8rem;
+    display: flex; flex-direction: column;
+    gap: .8rem; margin-top: 0; margin-bottom: 3rem;
     grid-template-columns: unset;
   }
-  .why-grid::-webkit-scrollbar { display: none; }
-  .why-card { flex: 0 0 72vw; max-width: 280px; scroll-snap-align: start; }
-  .why-card-num { font-size: 4rem; }
+  .why-card {
+    display: flex; flex-direction: row; align-items: flex-start;
+    gap: 1rem; padding: 1.2rem 1.4rem;
+    border-radius: 10px; border-top: none;
+    border-left: 3px solid var(--yellow);
+    min-height: unset;
+  }
+  .why-card:hover { transform: none; box-shadow: 0 2px 12px rgba(0,0,0,.25); }
+  .why-card-num { display: none; }
+  .why-icon {
+    width: 40px; height: 40px; flex-shrink: 0;
+    border-radius: 8px; margin-bottom: 0;
+    box-shadow: 0 2px 8px rgba(255,214,0,.25);
+  }
+  .why-icon svg { width: 18px; height: 18px; }
+  .why-card-content { display: flex; flex-direction: column; gap: .3rem; }
+  .why-title { font-size: 1rem; margin-bottom: .25rem; }
+  .why-desc { font-size: .83rem; line-height: 1.7; }
 
-  /* Testimonial full width */
-  .why-right { align-items: center; padding: 0 1.4rem; }
-  .testimonial-label { width: 100%; }
+  /* Testimonials: full width, tight stack */
+  .why-right { align-items: center; width: 100%; }
+  .testimonial-label { width: 100%; margin-bottom: 1.5rem; }
+  .testimonial-hint { margin-top: .3rem; }
+
   .testimonial-stack {
-    width: min(calc(100vw - 2.8rem), 340px);
-    height: 380px;
+    width: 100%; max-width: 340px;
+    height: 360px;
   }
   .t-card {
-    width: min(calc(100vw - 2.8rem), 340px);
-    height: 380px;
-    padding: 2rem 1.6rem;
+    width: 100%; max-width: 340px;
+    height: 360px;
+    padding: 1.8rem 1.4rem;
   }
-  .t-card[data-pos="middle"] { transform: rotate(0deg) translateX(20px); }
-  .t-card[data-pos="back"]   { transform: rotate(6deg) translateX(40px); }
-  .t-quote { font-size: .95rem; }
-  .t-avatar { width: 76px; height: 76px; }
+  .t-card[data-pos="middle"] { transform: rotate(0deg) translateX(14px); }
+  .t-card[data-pos="back"]   { transform: rotate(6deg) translateX(28px); }
+  .t-quote { font-size: .92rem; line-height: 1.65; }
+  .t-avatar { width: 72px; height: 72px; }
   .cta-band { flex-direction: column; align-items: flex-start; gap: 1.8rem; padding: 4rem 1.4rem; }
   .contact { padding: 5rem 1.4rem; grid-template-columns: 1fr; gap: 3rem; }
   .form-row { grid-template-columns: 1fr; }
