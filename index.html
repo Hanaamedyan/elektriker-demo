@@ -463,58 +463,69 @@
   }, { threshold: 0.5 });
   document.querySelectorAll('.stat-num[data-target]').forEach(el => statObserver.observe(el));
 
-  // Testimonial card stack — drag to shuffle
+  // Testimonial card stack — drag to shuffle (mobile + desktop)
   (function() {
     const stack = document.getElementById('testimonialStack');
     if (!stack) return;
-    const positions = ['front', 'middle', 'back'];
 
-    function getCards() {
-      return [...stack.querySelectorAll('.t-card')];
-    }
+    let isDragging = false, startX = 0, dragX = 0, activeCard = null;
 
     function shuffle() {
-      const cards = getCards();
-      // rotate positions: front→back, middle→front, back→middle
-      cards.forEach(card => {
+      stack.querySelectorAll('.t-card').forEach(card => {
         const cur = card.dataset.pos;
         card.dataset.pos = cur === 'front' ? 'back' : cur === 'middle' ? 'front' : 'middle';
       });
     }
 
-    // Pointer drag on front card
-    let startX = 0, isDragging = false, dragX = 0;
+    function getFront() { return stack.querySelector('.t-card[data-pos="front"]'); }
 
-    stack.addEventListener('pointerdown', e => {
-      const front = stack.querySelector('.t-card[data-pos="front"]');
-      if (!front || !front.contains(e.target)) return;
-      isDragging = true; startX = e.clientX; dragX = 0;
-      front.classList.add('dragging');
-      front.setPointerCapture(e.pointerId);
-    });
-
-    stack.addEventListener('pointermove', e => {
-      if (!isDragging) return;
-      dragX = e.clientX - startX;
-      const front = stack.querySelector('.t-card[data-pos="front"]');
-      if (front) {
-        const rot = -6 + dragX * 0.05;
-        front.style.transform = `rotate(${rot}deg) translateX(${dragX}px)`;
-        front.style.opacity = Math.max(0.4, 1 - Math.abs(dragX) / 300);
-      }
-    });
-
-    stack.addEventListener('pointerup', e => {
-      if (!isDragging) return;
-      isDragging = false;
-      const front = stack.querySelector('.t-card[data-pos="front"]');
+    function onStart(x) {
+      const front = getFront();
       if (!front) return;
-      front.classList.remove('dragging');
-      front.style.transform = '';
-      front.style.opacity = '';
-      if (dragX < -150) shuffle();
-      dragX = 0;
+      isDragging = true; startX = x; dragX = 0;
+      activeCard = front;
+      front.classList.add('dragging');
+    }
+
+    function onMove(x) {
+      if (!isDragging || !activeCard) return;
+      dragX = x - startX;
+      const rot = -6 + dragX * 0.04;
+      activeCard.style.transform = `rotate(${rot}deg) translateX(${dragX}px)`;
+      activeCard.style.opacity = String(Math.max(0.3, 1 - Math.abs(dragX) / 220));
+    }
+
+    function onEnd() {
+      if (!isDragging || !activeCard) return;
+      isDragging = false;
+      activeCard.classList.remove('dragging');
+      activeCard.style.transform = '';
+      activeCard.style.opacity = '';
+      const threshold = window.innerWidth < 768 ? 60 : 120;
+      if (dragX < -threshold) shuffle();
+      activeCard = null; dragX = 0;
+    }
+
+    // Pointer events (desktop + Android)
+    stack.addEventListener('pointerdown', e => {
+      if (!getFront()?.contains(e.target)) return;
+      onStart(e.clientX);
     });
+    window.addEventListener('pointermove', e => { if (isDragging) onMove(e.clientX); }, { passive: true });
+    window.addEventListener('pointerup', onEnd);
+    window.addEventListener('pointercancel', onEnd);
+
+    // Touch events (iOS Safari fallback)
+    stack.addEventListener('touchstart', e => {
+      if (!getFront()?.contains(e.target)) return;
+      onStart(e.touches[0].clientX);
+    }, { passive: true });
+    window.addEventListener('touchmove', e => {
+      if (!isDragging) return;
+      onMove(e.touches[0].clientX);
+    }, { passive: true });
+    window.addEventListener('touchend', onEnd);
+    window.addEventListener('touchcancel', onEnd);
   })();
 
   // Scroll reveal

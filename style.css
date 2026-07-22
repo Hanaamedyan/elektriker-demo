@@ -411,7 +411,7 @@ nav.nav-dark .nav-hamburger span { background: var(--black); }
 }
 .t-card[data-pos="front"] {
   z-index: 3; transform: rotate(-6deg) translateX(0px);
-  cursor: grab;
+  cursor: grab; touch-action: none;
 }
 .t-card[data-pos="front"].dragging { cursor: grabbing; transition: none; }
 .t-card[data-pos="middle"] {
