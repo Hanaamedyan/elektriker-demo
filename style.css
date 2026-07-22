@@ -326,10 +326,12 @@ nav.nav-dark .nav-hamburger span { background: var(--black); }
 .about-checklist { list-style: none; display: flex; flex-direction: column; gap: .8rem; margin-bottom: 2.4rem; }
 .about-checklist li { display: flex; align-items: center; gap: .8rem; font-size: .87rem; color: var(--gray); font-weight: 300; }
 .about-checklist li::before {
-  content: ''; display: block; flex-shrink: 0; width: 18px; height: 18px;
-  background: var(--ydim); border: 1px solid var(--bordery); border-radius: 50%;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='none' stroke='%23FFD600' stroke-width='2' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='3 8 7 12 13 4'/%3E%3C/svg%3E");
-  background-size: 10px; background-position: center; background-repeat: no-repeat;
+  content: ''; display: block; flex-shrink: 0; width: 22px; height: 22px;
+  background: #1a3050;
+  border-radius: 50%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='3 8 7 12 13 4'/%3E%3C/svg%3E");
+  background-size: 11px; background-position: center; background-repeat: no-repeat;
+  box-shadow: 0 2px 8px rgba(26,48,80,.3);
 }
 
 /* ── GALLERY ── */
