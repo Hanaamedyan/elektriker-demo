@@ -355,21 +355,57 @@ nav.nav-dark .nav-hamburger span { background: var(--black); }
 .gallery-video-wrap video { width: 100%; display: block; aspect-ratio: 9/16; object-fit: cover; }
 
 /* ── WHY US ── */
-.why { background: var(--light2); padding: 7rem 3rem; }
-.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem; margin-top: 3.5rem; }
-.why-card {
-  background: var(--white); padding: 2.6rem 2.2rem; border-radius: 12px;
-  border-top: 3px solid var(--yellow);
-  box-shadow: 0 2px 12px rgba(0,0,0,.07), 0 1px 3px rgba(0,0,0,.05);
+.why {
+  background: #111318;
+  padding: 8rem 3rem;
   position: relative; overflow: hidden;
-  transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s;
 }
-.why-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,.12), 0 4px 10px rgba(0,0,0,.07); }
-.why-card-num { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 5rem; color: rgba(26,48,80,.05); line-height: 1; position: absolute; top: 1rem; right: 1.4rem; pointer-events: none; }
-.why-icon { width: 48px; height: 48px; background: #1a3050; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; box-shadow: 0 4px 14px rgba(26,48,80,.25); }
-.why-icon svg { width: 22px; height: 22px; stroke: #ffffff; fill: none; stroke-width: 2; }
-.why-title { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 1.15rem; letter-spacing: .05em; text-transform: uppercase; margin-bottom: .8rem; color: var(--black); }
-.why-desc { font-size: .87rem; line-height: 1.85; color: var(--gray); font-weight: 300; }
+.why::before {
+  content: 'TRYGGHET';
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  font-family: 'Oswald', sans-serif; font-weight: 700;
+  font-size: clamp(6rem, 16vw, 18rem);
+  color: rgba(255,255,255,.025);
+  white-space: nowrap; pointer-events: none; letter-spacing: -.02em;
+  user-select: none;
+}
+.why .section-eyebrow { color: var(--yellow); }
+.why .section-eyebrow::before { background: var(--yellow); }
+.why .section-title { color: #ffffff; }
+.why .section-title .accent { color: var(--yellow); }
+
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3.5rem; position: relative; z-index: 1; }
+.why-card {
+  background: rgba(255,255,255,.05);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  padding: 2.8rem 2.2rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.09);
+  border-top: 3px solid var(--yellow);
+  position: relative; overflow: hidden;
+  transition: transform .3s cubic-bezier(.22,1,.36,1), background .3s, box-shadow .3s;
+}
+.why-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255,255,255,.09);
+  box-shadow: 0 24px 60px rgba(0,0,0,.4), 0 0 0 1px rgba(255,214,0,.15);
+}
+.why-card-num {
+  font-family: 'Oswald', sans-serif; font-weight: 700;
+  font-size: 6rem; line-height: 1;
+  color: rgba(255,214,0,.08);
+  position: absolute; top: .8rem; right: 1.2rem; pointer-events: none;
+}
+.why-icon {
+  width: 52px; height: 52px;
+  background: var(--yellow);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center; margin-bottom: 1.6rem;
+  box-shadow: 0 6px 20px rgba(255,214,0,.35);
+}
+.why-icon svg { width: 24px; height: 24px; stroke: #111318; fill: none; stroke-width: 2.2; }
+.why-title { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 1.2rem; letter-spacing: .05em; text-transform: uppercase; margin-bottom: .9rem; color: #ffffff; }
+.why-desc { font-size: .88rem; line-height: 1.85; color: rgba(255,255,255,.65); font-weight: 300; }
 
 /* ── CTA BAND ── */
 .cta-band {
