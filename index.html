@@ -10,7 +10,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital@1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=4">
-  <style></style>
+  <style>
+    .word-cycle-wrap { display: inline-block; }
+    .word-cycle { display: inline-block; white-space: nowrap; }
+    @keyframes wcExit {
+      0%   { opacity: 1; transform: translateY(0);      filter: blur(0px); }
+      100% { opacity: 0; transform: translateY(0.15em); filter: blur(8px); }
+    }
+    @keyframes wcEnter {
+      0%   { opacity: 0; transform: translateY(-0.15em); filter: blur(8px); }
+      100% { opacity: 1; transform: translateY(0);       filter: blur(0px); }
+    }
+    .word-cycle.wc-exit  { animation: wcExit  0.3s ease-in  forwards; }
+    .word-cycle.wc-enter { animation: wcEnter 0.4s ease-out forwards; }
+  </style>
 </head>
 <body>
 
@@ -69,7 +82,7 @@
 
   <div class="hero-content reveal">
     <div class="hero-eyebrow">Autorisert elektriker · Bolig og Næring</div>
-    <h1 class="hero-h1">Strøm du<br>kan <span class="accent">stole på</span></h1>
+    <h1 class="hero-h1">Strøm du<br>kan <span class="word-cycle-wrap"><span class="word-cycle accent">stole på</span></span></h1>
     <div class="hero-btns">
       <a href="#kontakt" class="btn-yellow">
         Få gratis tilbud
@@ -532,6 +545,25 @@
     }, { passive: true });
     window.addEventListener('touchend', onEnd);
     window.addEventListener('touchcancel', onEnd);
+  })();
+
+  // Word cycle animation on hero heading
+  (function() {
+    const words = ['stole på', 'lite på', 'leve med', 'bygge med', 'regne med'];
+    let idx = 0;
+    const el = document.querySelector('.word-cycle');
+    if (!el) return;
+    setInterval(() => {
+      el.classList.remove('wc-enter');
+      el.classList.add('wc-exit');
+      setTimeout(() => {
+        idx = (idx + 1) % words.length;
+        el.textContent = words[idx];
+        el.classList.remove('wc-exit');
+        void el.offsetWidth;
+        el.classList.add('wc-enter');
+      }, 310);
+    }, 3500);
   })();
 
   // Scroll reveal
