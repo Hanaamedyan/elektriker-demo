@@ -222,7 +222,7 @@ nav.nav-dark .nav-hamburger span { background: var(--black); }
 }
 .hero-content { position: relative; z-index: 2; max-width: 860px; }
 .hero-eyebrow {
-  font-family: 'DM Mono', monospace; font-size: .65rem; letter-spacing: .2em;
+  font-family: 'DM Mono', monospace; font-size: .95rem; letter-spacing: .18em;
   text-transform: uppercase; color: var(--yellow);
   display: flex; align-items: center; gap: .8rem; margin-bottom: 1.4rem; flex-wrap: wrap;
 }
