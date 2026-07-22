@@ -600,8 +600,45 @@ footer .footer-badge-dot { background: var(--yellow); }
   .about-img-badge { bottom: 1rem; left: 1rem; padding: .8rem 1rem; }
   .about-badge-num { font-size: 1.6rem; }
   .gallery { padding: 5rem 1.4rem; grid-template-columns: 1fr; gap: 2.5rem; }
-  .why { padding: 5rem 1.4rem; }
-  .why-grid { grid-template-columns: 1fr; gap: 1rem; margin-top: 2.5rem; }
+  /* Why section — full mobile redesign */
+  .why { padding: 5rem 0; overflow: hidden; }
+  .why::before { display: none; }
+  .why .section-eyebrow,
+  .why .section-title { padding: 0 1.4rem; }
+  .why-inner { display: flex; flex-direction: column; gap: 3rem; }
+  .why-left { display: flex; flex-direction: column; }
+
+  /* Horizontal swipe strip for why-cards */
+  .why-grid {
+    display: flex; flex-direction: row;
+    overflow-x: auto; scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: .9rem;
+    padding: 0 1.4rem 1rem;
+    margin-top: 1.8rem;
+    grid-template-columns: unset;
+  }
+  .why-grid::-webkit-scrollbar { display: none; }
+  .why-card { flex: 0 0 72vw; max-width: 280px; scroll-snap-align: start; }
+  .why-card-num { font-size: 4rem; }
+
+  /* Testimonial full width */
+  .why-right { align-items: center; padding: 0 1.4rem; }
+  .testimonial-label { width: 100%; }
+  .testimonial-stack {
+    width: min(calc(100vw - 2.8rem), 340px);
+    height: 380px;
+  }
+  .t-card {
+    width: min(calc(100vw - 2.8rem), 340px);
+    height: 380px;
+    padding: 2rem 1.6rem;
+  }
+  .t-card[data-pos="middle"] { transform: rotate(0deg) translateX(20px); }
+  .t-card[data-pos="back"]   { transform: rotate(6deg) translateX(40px); }
+  .t-quote { font-size: .95rem; }
+  .t-avatar { width: 76px; height: 76px; }
   .cta-band { flex-direction: column; align-items: flex-start; gap: 1.8rem; padding: 4rem 1.4rem; }
   .contact { padding: 5rem 1.4rem; grid-template-columns: 1fr; gap: 3rem; }
   .form-row { grid-template-columns: 1fr; }
