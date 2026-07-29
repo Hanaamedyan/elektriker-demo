@@ -592,6 +592,7 @@ footer .footer-badge-dot { background: var(--yellow); }
 .faq-section { background: var(--light2); padding: 7rem 3rem; }
 .faq-inner { max-width: 860px; margin: 0 auto; }
 .faq-header { margin-bottom: 3rem; }
+.faq-header .section-title { line-height: 1.05; }
 .faq-list { display: flex; flex-direction: column; }
 .faq-item { border-bottom: 1px solid var(--border); }
 .faq-item:first-child { border-top: 1px solid var(--border); }
