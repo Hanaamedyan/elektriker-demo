@@ -34,7 +34,7 @@
     /* ── GRID ── */
     .proj-section { background: var(--light0); padding: 2.5rem 3rem 7rem; }
     .proj-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem;
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.8rem;
     }
 
     /* ── CARD ── */
@@ -48,9 +48,7 @@
       transform: translateY(-6px);
       box-shadow: 0 20px 50px rgba(0,0,0,.12), 0 4px 12px rgba(0,0,0,.06);
     }
-    .proj-card.featured { grid-column: span 2; }
     .proj-card-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
-    .proj-card.featured .proj-card-img { aspect-ratio: 21/9; }
     .proj-card-body { padding: 1.8rem 2rem 2.2rem; display: flex; flex-direction: column; flex: 1; }
     .proj-card-meta { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; margin-bottom: .9rem; }
 
@@ -75,7 +73,6 @@
       font-size: 1.25rem; letter-spacing: .03em; text-transform: uppercase;
       color: var(--black); margin-bottom: .45rem; line-height: 1.1;
     }
-    .proj-card.featured .proj-card-title { font-size: 1.65rem; }
     .proj-card-loc {
       display: flex; align-items: center; gap: .4rem;
       font-family: 'DM Mono', monospace; font-size: .57rem;
@@ -122,20 +119,10 @@
     }
 
     /* ── RESPONSIVE ── */
-    @media(max-width:1024px) {
-      .proj-grid { grid-template-columns: repeat(2,1fr); }
-      .proj-card.featured { grid-column: span 2; }
-    }
     @media(max-width:768px) {
       .proj-filter-wrap { padding: 2rem 1.4rem 0; }
       .proj-section { padding: 2rem 1.4rem 5rem; }
       .proj-grid { grid-template-columns: 1fr; gap: 1.2rem; }
-      .proj-card.featured { grid-column: span 1; }
-      .proj-card.featured .proj-card-img { aspect-ratio: 16/9; }
-      .proj-card.featured .proj-card-title { font-size: 1.3rem; }
-      .proj-stats { flex-direction: column; align-items: center; gap: 2rem; padding: 3rem 1.4rem; }
-      .proj-stat-item { max-width: none; }
-      .proj-stat-item + .proj-stat-item::before { display: none; }
     }
   </style>
 </head>
@@ -207,7 +194,7 @@
   <div class="proj-grid" id="projGrid">
 
     <!-- FEATURED -->
-    <div class="proj-card featured reveal" data-cat="installasjon">
+    <div class="proj-card reveal" data-cat="installasjon">
       <img class="proj-card-img" src="pexels-ranjeet-860714737-27928759.jpg" alt="Fullstendig el-installasjon enebolig Strindheim"/>
       <div class="proj-card-body">
         <div class="proj-card-meta">
